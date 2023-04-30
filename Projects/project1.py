@@ -15,7 +15,7 @@ finalDB=pd.DataFrame(columns=my_columns)
 
 tot=10000000
 
-for i in range(1,10):
+for i in range(1,len(stocks)):
     symbol=stocks[i]
     try:
         a=nse.get_quote(symbol)
@@ -25,5 +25,10 @@ for i in range(1,10):
 
     except IndexError:
         continue
+
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
+pd.set_option('display.width', None)
+pd.set_option('display.max_colwidth', -1)
 
 print(finalDB)

@@ -78,4 +78,9 @@ del finalDB['index']
 for i in range(len(finalDB)):
     finalDB.loc[i,'Number of Shares to Buy']=int(tot/(len(finalDB)*finalDB.loc[i,'Price']))
 
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
+pd.set_option('display.width', None)
+pd.set_option('display.max_colwidth', -1)
+
 print(finalDB)
